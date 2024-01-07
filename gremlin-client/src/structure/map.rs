@@ -138,6 +138,7 @@ impl std::iter::FromIterator<(String, GValue)> for Map {
 #[derive(Debug, PartialEq, Clone, Eq, Hash)]
 pub enum GKey {
     String(String),
+    Int32(i32),
     Token(Token),
     Vertex(Vertex),
     Edge(Edge),
@@ -152,6 +153,12 @@ impl From<&str> for GKey {
 impl From<String> for GKey {
     fn from(val: String) -> Self {
         GKey::String(val)
+    }
+}
+
+impl From<i32> for GKey {
+    fn from(val: i32) -> Self {
+        GKey::Int32(val)
     }
 }
 

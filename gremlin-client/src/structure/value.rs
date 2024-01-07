@@ -230,6 +230,7 @@ impl From<GKey> for GValue {
     fn from(val: GKey) -> Self {
         match val {
             GKey::String(s) => GValue::String(s),
+            GKey::Int32(s) => GValue::Int32(s),
             GKey::Token(s) => GValue::String(s.value().clone()),
             GKey::Vertex(v) => GValue::Vertex(v),
             GKey::Edge(v) => GValue::Edge(v),
